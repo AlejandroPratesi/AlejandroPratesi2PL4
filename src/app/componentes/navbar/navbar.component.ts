@@ -1,0 +1,24 @@
+import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/servicios/login.service';
+
+@Component({
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
+})
+export class NavbarComponent implements OnInit {
+
+  constructor(private loginServicio: LoginService) { }
+
+  ngOnInit() {
+  }
+
+  isAutenticado(){
+    return this.loginServicio.isAutenticado();
+  }
+
+  logout(){
+    this.loginServicio.logout();
+  }
+
+}

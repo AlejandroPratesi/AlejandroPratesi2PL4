@@ -1,0 +1,47 @@
+
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/Login" href="#">Login <span class="sr-only"></span></a>
+      </li>
+    
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-link my-2 my-sm-0" (click)="getListado()">Paises</button>
+        &nbsp;&nbsp;
+        <button class="btn btn-success my-2 my-sm-0">Exportar Excel</button>
+      &nbsp;&nbsp;
+      <button class="btn btn-danger my-2 my-sm-0">Exportar PDF</button>
+    </form>
+   
+  </div>
+</nav>
+    
+<table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Pais</th>
+        <th>Bandera</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let pais of listadoPaises">
+    <td> {{pais.name }} </td>
+  
+     <td><img class='fotoGrilla' width="50" height="50" class="img-circle" src='{{ pais.flag}}'/></td> 
+    <td>
+      <button class="btn btn-sm btn-warning">Editar</button>
+    </td>
+    </tr>
+</tbody> 
+</table>
